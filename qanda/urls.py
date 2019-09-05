@@ -10,4 +10,7 @@ urlpatterns = [
          name='answer_question'),
     path('q/<int:pk>/accept', views.UpdateAnswerAcceptance.as_view(),
          name='update_answer_acceptance'),
+    path('daily/<int:year>/<int:month>/<int:day>', views.DailyQuestionList.as_view(),
+         name='daily_questions'),
+    path('', views.TodayQuestionList.as_view(), name='home')
 ]
