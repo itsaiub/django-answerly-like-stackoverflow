@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load markdownify %}
 
+{% block title %}
+  {{ question.title }} - {{ block.super }}
+{% endblock title %}
+
 {% block body %}
   {% include "qanda/common/display_question.html" %}
   {% if preview %}
@@ -13,5 +17,5 @@
       </div>
     </div>
   {% endif %}
-  {% include "qanda/common/question_post_answer.html" %}
+  {% include "qanda/common/question_post_answer.html" with answer_form=form %}
 {% endblock body %}
