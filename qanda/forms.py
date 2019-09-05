@@ -32,3 +32,14 @@ class AnswerForm(forms.ModelForm):
     class Meta:
         model = models.Answer
         fields = ['answer', 'user', 'question', ]
+
+
+class AnswerAcceptanceForm(forms.ModelForm):
+    accepted = forms.BooleanField(
+        widget=forms.HiddenInput,
+        required=False
+    )
+
+    class Meta:
+        model = models.Answer
+        fields = ['accepted', ]
