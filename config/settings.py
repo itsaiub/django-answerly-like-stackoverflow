@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     'user',
     'qanda',
 
+    'markdownify',
+    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,3 +124,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# Markdownify Settings
+MARKDOWNIFY_STRIP = False
+MARKDOWNIFY_WHITELIST_TAGS = [
+    'a', 'blockquote', 'code', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'li', 'ol', 'p', 'ul'
+]
+
+# Crispy Form Setting
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
